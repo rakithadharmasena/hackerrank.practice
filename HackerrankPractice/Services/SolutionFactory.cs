@@ -15,13 +15,13 @@ namespace HackerrankPractice.Services
         }
 
 
-        public ISolution GetSolution(int userSelection)
+        public BaseSolution GetSolution(int userSelection)
         {
-            ISolution solution = null;
+            BaseSolution solution = null;
             switch (userSelection)
             {
                 case 1:
-                    solution = (ISolution)serviceProvider.GetService(typeof(DavisStairCase));
+                    solution = (BaseSolution)serviceProvider.GetService(typeof(DavisStairCase));
                     break;
                 default:
                     break;

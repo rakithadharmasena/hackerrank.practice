@@ -25,13 +25,14 @@ namespace HackerrankPractice
             
             do
             {
-                Console.WriteLine();
+                
+                Console.WriteLine("** Main Menu **");
                 for (int i = 0; i < solutions.Count; i++)
                 {
                     Console.WriteLine("{0}.{1}", i + 1, solutions[i]);
                 }
                 
-                Console.WriteLine("Enter Program Number and press ENTER to continue\n");
+                Console.WriteLine("\nEnter Program Number and press ENTER to continue");
                 Console.WriteLine("Enter q to quit\n");
                 userInput = Console.ReadLine();
 
@@ -54,7 +55,7 @@ namespace HackerrankPractice
             var services = new ServiceCollection();
             services.AddSingleton<SolutionFactory>();
             services.AddSingleton<DavisStairCase>()
-                .AddSingleton<ISolution, DavisStairCase>(s => s.GetService<DavisStairCase>());
+                .AddSingleton<BaseSolution, DavisStairCase>(s => s.GetService<DavisStairCase>());
             _serviceProvider = services.BuildServiceProvider(true);
         }
     }
